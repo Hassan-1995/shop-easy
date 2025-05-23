@@ -2,6 +2,7 @@ import React from "react";
 import ImageContent from "../components/ImageContent";
 import Image from "next/image";
 import Link from "next/link";
+import Header from "../components/Header";
 
 const collection = [
   {
@@ -29,13 +30,7 @@ const collection = [
 const MainSection = () => {
   return (
     <div className="px-10">
-      <div className="flex items-center justify-center my-5">
-        <hr className="w-1/3 border-t-2 border-gray-300" />
-        <h1 className="mx-4 text-3xl text-gray-600 font-semibold">
-          COLLECTION
-        </h1>
-        <hr className="w-1/3 border-t-2 border-gray-300" />
-      </div>
+      <Header title="COLLECTION" />
       <div className="flex justify-between items-center my-12">
         {collection.map((item) => (
           <ImageContent
@@ -46,7 +41,7 @@ const MainSection = () => {
         ))}
       </div>
 
-      <div className="w-full h-[600px] space-y-3 ">
+      <div className="w-full h-[600px] space-y-3 my-10">
         <div className="w-full h-1/2 flex space-x-3">
           <Link href={"/"} className="relative w-3/5 h-full group">
             <Image
@@ -106,6 +101,29 @@ const MainSection = () => {
               </p>
             </div>
           </Link>
+        </div>
+      </div>
+
+      <div className="bg-red-100 w-full h-100 my-10 flex">
+        <div className="w-1/5 flex justify-end bg-amber-400">
+          <div className="relative w-full flex justify-end bg-amber-400">
+            <Image
+              src={"/images/model_03.png"}
+              alt="hkj"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+        <div className="w-4/5 bg-emerald-900 h-full flex flex-col justify-center items-center">
+          <h1 className="text-3xl text-white font-bold">
+            GET A <span className="text-yellow-500">20%</span> OFF ON YOUR FIRST
+            ORDER
+          </h1>
+          <p className="text-lg text-gray-200 mt-2">
+            Use your <span className="font-semibold text-white">EMAIL</span> at
+            checkout to avail your discount!
+          </p>
         </div>
       </div>
     </div>
