@@ -42,9 +42,9 @@ export default function RootLayout({
             <NavBar />
           </nav>
           <main>{children}</main>
-          {/* <footer>
+          <footer>
             <Footer />
-          </footer> */}
+          </footer>
         </Theme>
       </body>
     </html>

@@ -19,7 +19,7 @@ const Footer = () => {
   ];
   const contactLinks = [
     {
-      label: "Azeem Chambers, Hasan Ali Efandi Road, Karachi, Pakistan",
+      label: "Block/2, K.A.E.C.H.S, Dr Israr Ahmed Road, Karachi, Pakistan",
       icon: LuMapPin,
     },
     { label: "+92 21 1234567", icon: LuPhone },

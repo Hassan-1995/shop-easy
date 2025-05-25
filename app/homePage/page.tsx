@@ -1,12 +1,13 @@
 import HeroSection from "./HeroSection";
+import HeroSection01 from "./HeroSection01";
 import MainSection from "./MainSection";
 
 const HomePage = () => {
   return (
     <>
-      {/* <h1 className="z-0 bg-rose-800">hello</h1> */}
+      <HeroSection01 />
       {/* <HeroSection /> */}
-      {/* <MainSection /> */}
+      <MainSection />
     </>
   );
 };

@@ -3,6 +3,7 @@ import ImageContent from "../components/ImageContent";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "../components/Header";
+import InputEmail from "./InputEmail";
 
 const collection = [
   {
@@ -29,9 +30,9 @@ const collection = [
 
 const MainSection = () => {
   return (
-    <div className="px-10">
+    <div className="px-3 md:px-10">
       <Header title="COLLECTION" />
-      <div className="flex justify-between items-center my-12">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 my-12">
         {collection.map((item) => (
           <ImageContent
             key={item.category}
@@ -51,22 +52,22 @@ const MainSection = () => {
               className="object-cover"
             />
             <div className="absolute inset-0 bg-black/50 z-10" />
-            <div className="absolute inset-0 z-20 flex items-center justify-center">
-              <p className="text-white font-extrabold text-2xl border-8 p-10 transition-transform duration-300 ease-in-out group-hover:scale-130">
+            <div className="absolute inset-0 z-20 flex items-center justify-center p-4">
+              <p className="text-white text-center font-extrabold text-lg md:text-2xl md:border-8 p-10 transition-transform duration-300 ease-in-out group-hover:scale-130">
                 SUMMER COLLECTION
               </p>
             </div>
           </Link>
-          <Link href="/" className="relative w-2/5 h-full group">
+          <Link href="/" className="relative w-2/5 h-auto group">
             <Image
               src="/images/custom_print.png"
               alt="summer"
               fill
-              className="object-contain"
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-black/50 z-10" />
             <div className="absolute inset-0 z-20 flex items-center justify-center">
-              <p className="text-white font-extrabold text-2xl transition-transform duration-300 ease-in-out group-hover:scale-130">
+              <p className="text-white text-center px-4 font-extrabold text-sm md:text-2xl transition-transform duration-300 ease-in-out group-hover:scale-130">
                 CUSTOM PRINTED TEES
               </p>
             </div>
@@ -78,11 +79,11 @@ const MainSection = () => {
               src={"/images/casual_wear_FS.png"}
               alt="summer"
               fill
-              className="object-contain"
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-black/50 z-10" />
             <div className="absolute inset-0 z-20 flex items-center justify-center">
-              <p className="text-white font-extrabold text-2xl transition-transform duration-300 ease-in-out group-hover:scale-130">
+              <p className="text-white text-center px-4 font-extrabold text-sm md:text-2xl transition-transform duration-300 ease-in-out group-hover:scale-130">
                 FORMAL/CASUAL TEES
               </p>
             </div>
@@ -96,7 +97,7 @@ const MainSection = () => {
             />
             <div className="absolute inset-0 bg-black/50 z-10" />
             <div className="absolute inset-0 z-20 flex items-center justify-center">
-              <p className="text-white font-extrabold text-2xl border-8 p-10 transition-transform duration-300 ease-in-out group-hover:scale-130">
+              <p className="text-white text-center font-extrabold text-lg md:text-2xl md:border-8 p-10 transition-transform duration-300 ease-in-out group-hover:scale-130">
                 WINTER COLLECTION
               </p>
             </div>
@@ -104,9 +105,9 @@ const MainSection = () => {
         </div>
       </div>
 
-      <div className="bg-red-100 w-full h-100 my-10 flex">
-        <div className="w-1/5 flex justify-end bg-amber-400">
-          <div className="relative w-full flex justify-end bg-amber-400">
+      <div className="bg-red-100 w-full h-[25vh] md:h-[30vh] lg:h-[60vh] my-10 flex ">
+        <div className="w-1/5 flex justify-end ">
+          <div className="relative w-full flex justify-end ">
             <Image
               src={"/images/model_03.png"}
               alt="hkj"
@@ -116,14 +117,17 @@ const MainSection = () => {
           </div>
         </div>
         <div className="w-4/5 bg-emerald-900 h-full flex flex-col justify-center items-center">
-          <h1 className="text-3xl text-white font-bold">
+          <h1 className="text-white md:text-2xl lg:text-5xl text-center font-bold">
             GET A <span className="text-yellow-500">20%</span> OFF ON YOUR FIRST
             ORDER
           </h1>
-          <p className="text-lg text-gray-200 mt-2">
+          <p className="text-xs md:text-lg lg:text-3xl text-gray-200 text-center mt-2">
             Use your <span className="font-semibold text-white">EMAIL</span> at
             checkout to avail your discount!
           </p>
+          <div className="w-11/12">
+            <InputEmail />
+          </div>
         </div>
       </div>
     </div>

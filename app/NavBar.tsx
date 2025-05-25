@@ -17,8 +17,9 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="absolute bg-emerald-900 items-center w-full">
-      <div className="flex h-16 mx-auto z-50 px-6 items-center justify-between lg:px-10">
+    <nav className="bg-emerald-900 w-full">
+      {/* Top Navbar */}
+      <div className="flex h-16 mx-auto px-6 items-center justify-between lg:px-10">
         <Link
           href="/"
           className="text-2xl flex gap-3 items-center font-bold italic text-amber-400 hover:text-amber-600"
@@ -39,22 +40,25 @@ const NavBar = () => {
             </li>
           ))}
         </ul>
+
         <div className="w-[120px] hidden lg:block">
           <AppLink title="Sign Up" href="/" />
         </div>
+
         <button
-          className="text-white md:hidden "
+          className="text-white md:hidden"
           onClick={() => setMenu((prev) => !prev)}
         >
-          {menu ? <LuChevronUp size={"30"} /> : <LuChevronDown size={"30"} />}
+          {menu ? <LuChevronUp size={30} /> : <LuChevronDown size={30} />}
         </button>
       </div>
+
       <div
-        className={`lg:hidden bg-emerald-900 fixed -z-10 top-0 right-0 h-screen w-screen py-5 px-6 transform transition-transform duration-700 ease-in-out ${
-          menu ? "translate-y-0" : "-translate-y-full"
+        className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
+          menu ? "max-h-screen py-6" : "max-h-0"
         }`}
       >
-        <ul className="space-x-6 mt-16">
+        <ul className="flex flex-col pl-5 gap-4">
           {mainLinks.map((link) => (
             <li key={link.label}>
               <Link
