@@ -4,14 +4,21 @@ import { PiShirtFoldedDuotone } from "react-icons/pi";
 import AppLink from "./components/common/AppLink";
 import { useState } from "react";
 import { LuChevronDown, LuChevronUp } from "react-icons/lu";
+import { FiShoppingBag } from "react-icons/fi";
+import { useSelector } from "react-redux";
+import { RootState } from "./store/store";
 
 const NavBar = () => {
   const [menu, setMenu] = useState(false);
+
+  const cartItems = useSelector((state: RootState) => state.cart.items);
+  const item = cartItems?.reduce((sum, item) => sum + item.quantity, 0);
+
   const mainLinks = [
     { label: "Home", href: "/" },
     { label: "Shirts", href: "/shirts" },
     { label: "Trousers", href: "/trousers" },
-    { label: "Sale", href: "/sale" },
+    { label: "Shoes", href: "/shoes" },
     { label: "About Us", href: "/about" },
     { label: "Contact Us", href: "/contactUs" },
   ];
@@ -69,6 +76,12 @@ const NavBar = () => {
               </Link>
             </li>
           ))}
+          <div className="text-white w-min relative">
+            <FiShoppingBag size={24} />
+            {item > 0 && (
+              <div className="absolute right-0 -top-1 w-2 h-2 rounded-full bg-red-500" />
+            )}
+          </div>
         </ul>
       </div>
     </nav>

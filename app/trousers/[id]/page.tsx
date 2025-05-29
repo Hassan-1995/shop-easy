@@ -1,4 +1,3 @@
-import React from "react";
 import MainSection from "./MainSection";
 
 type ItemDetailPageProps = {

@@ -11,10 +11,11 @@ const SizesButton = () => {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    if (searchParams.get("size")) {
-      handleClick(searchParams.get("size")!);
+    const sizeFromQuery = searchParams.get("size");
+    if (sizeFromQuery && selectedSize !== sizeFromQuery) {
+      setSelectedSize(sizeFromQuery);
     }
-  }, []);
+  }, [searchParams, selectedSize]);
 
   const handleClick = (size: string) => {
     setSelectedSize(size);

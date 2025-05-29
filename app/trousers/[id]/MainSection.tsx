@@ -1,9 +1,8 @@
 import Image from "next/image";
-import React from "react";
+import { FaCircle } from "react-icons/fa6";
+import AddToBagButton from "../../components/AddToBagButton";
 import SizeChartModal from "../../components/SizeChartModal";
 import SizesButton from "../../components/SizesButton";
-import AddToBagButton from "../../components/AddToBagButton";
-import { FaCircle } from "react-icons/fa6";
 
 type MainSectionProps = {
   imageSrc: string;

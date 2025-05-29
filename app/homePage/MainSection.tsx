@@ -1,8 +1,7 @@
-import React from "react";
-import ImageContent from "../components/ImageContent";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "../components/Header";
+import ImageContent from "../components/ImageContent";
 import InputEmail from "../components/InputEmail";
 
 const collection = [

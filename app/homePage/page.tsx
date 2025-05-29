@@ -1,5 +1,4 @@
 import HeroSection from "./HeroSection";
-import HeroSection01 from "./HeroSection01";
 import MainSection from "./MainSection";
 
 const HomePage = () => {
