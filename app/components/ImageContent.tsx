@@ -5,12 +5,13 @@ import Link from "next/link";
 type ImageContentProps = {
   imageSrc: string;
   description: string;
+  href: string;
 };
 
-const ImageContent = ({ imageSrc, description }: ImageContentProps) => {
+const ImageContent = ({ imageSrc, description, href }: ImageContentProps) => {
   return (
     <Link
-      href="/"
+      href={href}
       className="w-auto h-auto relative overflow-visible group flex justify-center"
     >
       <Image

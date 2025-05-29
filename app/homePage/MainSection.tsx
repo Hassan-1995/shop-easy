@@ -3,28 +3,56 @@ import ImageContent from "../components/ImageContent";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "../components/Header";
-import InputEmail from "./InputEmail";
+import InputEmail from "../components/InputEmail";
 
 const collection = [
   {
     category: "1",
     imageSrc: "/images/basic_solid_tees.png",
     description: "Basic and Solid Tees",
+    href: "/shirts?type=Basic+%26+Solid+Tees",
   },
   {
     category: "2",
     imageSrc: "/images/graphic_printed_tees.png",
     description: "Graphic and Printed Tees",
+    href: "/shirts?type=Graphic+%26+Printed+Tees",
   },
   {
     category: "3",
     imageSrc: "/images/oversized_drop_shoulder_tees.png",
     description: "Oversized and Shoulder Tees",
+    href: "/shirts?type=Oversized+%26+Drop+Shoulder",
   },
   {
     category: "4",
     imageSrc: "/images/polo_collar_tees.png",
     description: "Polo and Collar Tees",
+    href: "/shirts?type=Polo+%26+Collar+Tees",
+  },
+  {
+    category: "5",
+    imageSrc: "/images/chinos_casual_trousers.png",
+    description: "Chinos and Casual Trousers",
+    href: "/trousers?type=Chinos+%26+Casual+Trousers",
+  },
+  {
+    category: "6",
+    imageSrc: "/images/formal_slim_fit_trousers.png",
+    description: "Formal and Slim Fit Trousers",
+    href: "/trousers?type=Formal+%26+Slim+Fit+Trousers",
+  },
+  {
+    category: "7",
+    imageSrc: "/images/cargo_utility_trousers.png",
+    description: "Cargo and Utility Trousers",
+    href: "/trousers?type=Cargo+%26+Utility+Trousers",
+  },
+  {
+    category: "8",
+    imageSrc: "/images/joggers_relaxed_fit_trousers.png",
+    description: "Joggers and Relaxed Fit Pants",
+    href: "/trousers?type=Joggers+%26+Relaxed+Fit+Pants",
   },
 ];
 
@@ -38,6 +66,7 @@ const MainSection = () => {
             key={item.category}
             imageSrc={item.imageSrc}
             description={item.description}
+            href={item.href}
           />
         ))}
       </div>
@@ -105,7 +134,7 @@ const MainSection = () => {
         </div>
       </div>
 
-      <div className="bg-red-100 w-full h-[25vh] md:h-[30vh] lg:h-[60vh] my-10 flex ">
+      <div className="bg-red-100 w-full h-[25vh] md:h-[40vh] lg:h-[60vh] my-10 flex ">
         <div className="w-1/5 flex justify-end ">
           <div className="relative w-full flex justify-end ">
             <Image

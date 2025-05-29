@@ -9,8 +9,8 @@ const NavBar = () => {
   const [menu, setMenu] = useState(false);
   const mainLinks = [
     { label: "Home", href: "/" },
-    { label: "Shop", href: "/shop" },
-    { label: "New Collection", href: "/new-collection" },
+    { label: "Shirts", href: "/shirts" },
+    { label: "Trousers", href: "/trousers" },
     { label: "Sale", href: "/sale" },
     { label: "About Us", href: "/about" },
     { label: "Contact Us", href: "/contactUs" },

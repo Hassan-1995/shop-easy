@@ -5,8 +5,8 @@ import MainSection from "./MainSection";
 const HomePage = () => {
   return (
     <>
-      <HeroSection01 />
-      {/* <HeroSection /> */}
+      {/* <HeroSection01 /> */}
+      <HeroSection />
       <MainSection />
     </>
   );
