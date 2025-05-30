@@ -1,31 +1,29 @@
-import MainSection from "./MainSection";
+import MainSection from "../../components/MainSection";
 
 type ItemDetailPageProps = {
-  // params: { id: string };
-  searchParams: {
+  searchParams: Promise<{
     picture: string | "";
-    desc: string | "";
-    subTitle: string | "";
-    cost: string | "";
-    stk: number | 0;
-    color: string | "";
-  };
+    heading?: string;
+    subHeading?: string;
+    price?: string;
+    stock?: string;
+    color?: string;
+  }>;
 };
 
-const ItemDetailPage = ({
-  //   params: { id },
-  searchParams,
-}: ItemDetailPageProps) => {
+const ItemDetailPage = async ({ searchParams }: ItemDetailPageProps) => {
+  const { picture, heading, subHeading, price, stock, color } =
+    await searchParams;
+
   return (
     <div>
-      {/* ItemDetailPage: {id} and {searchParams?.color} */}
       <MainSection
-        imageSrc={searchParams.picture}
-        title={searchParams.desc}
-        subTitle={searchParams.subTitle}
-        price={searchParams.cost}
-        stock={searchParams.stk}
-        shirtColor={searchParams.color}
+        imageSrc={picture}
+        title={heading}
+        subTitle={subHeading}
+        price={price}
+        stock={stock}
+        color={color}
       />
     </div>
   );

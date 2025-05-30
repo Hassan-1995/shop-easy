@@ -1,10 +1,9 @@
 "use client";
 import Link from "next/link";
-import { PiShirtFoldedDuotone } from "react-icons/pi";
-import AppLink from "./components/common/AppLink";
 import { useState } from "react";
-import { LuChevronDown, LuChevronUp } from "react-icons/lu";
 import { FiShoppingBag } from "react-icons/fi";
+import { LuChevronDown, LuChevronUp } from "react-icons/lu";
+import { PiShirtFoldedDuotone } from "react-icons/pi";
 import { useSelector } from "react-redux";
 import { RootState } from "./store/store";
 
@@ -18,9 +17,8 @@ const NavBar = () => {
     { label: "Home", href: "/" },
     { label: "Shirts", href: "/shirts" },
     { label: "Trousers", href: "/trousers" },
-    { label: "Shoes", href: "/shoes" },
     { label: "About Us", href: "/about" },
-    { label: "Contact Us", href: "/contactUs" },
+    { label: "Contact Us", href: "/contact" },
   ];
 
   return (
@@ -48,9 +46,15 @@ const NavBar = () => {
           ))}
         </ul>
 
-        <div className="w-[120px] hidden lg:block">
-          <AppLink title="Sign Up" href="/" />
-        </div>
+        <Link
+          href={"/cart"}
+          className="hidden md:flex text-white w-min relative"
+        >
+          <FiShoppingBag size={24} />
+          {item > 0 && (
+            <div className="absolute right-0 -top-1 w-2 h-2 rounded-full bg-red-500" />
+          )}
+        </Link>
 
         <button
           className="text-white md:hidden"
@@ -76,12 +80,12 @@ const NavBar = () => {
               </Link>
             </li>
           ))}
-          <div className="text-white w-min relative">
+          <Link href={"/cart"} className="text-white w-min relative">
             <FiShoppingBag size={24} />
             {item > 0 && (
               <div className="absolute right-0 -top-1 w-2 h-2 rounded-full bg-red-500" />
             )}
-          </div>
+          </Link>
         </ul>
       </div>
     </nav>

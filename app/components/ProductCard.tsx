@@ -10,6 +10,7 @@ type ProductCardProps = {
   price?: number;
   color?: string;
   availStock?: number;
+  priority?: boolean;
 };
 
 const ProductCard = ({
@@ -20,6 +21,7 @@ const ProductCard = ({
   price,
   color,
   availStock,
+  priority,
 }: ProductCardProps) => {
   return (
     <div className="mx-2 md:mx-3 my-2 md:my-4 ">
@@ -28,10 +30,10 @@ const ProductCard = ({
           pathname: href,
           query: {
             picture: imageSrc,
-            cost: price,
-            desc: title,
-            subTitle: subTitle,
-            stk: availStock,
+            price: price,
+            heading: title,
+            subHeading: subTitle,
+            stock: availStock,
             color: color,
           },
         }}
@@ -42,6 +44,7 @@ const ProductCard = ({
           alt={title!}
           width={200}
           height={250}
+          priority={priority}
           className="transition-transform object-cover duration-300 ease-in-out group-hover:scale-110"
         />
       </Link>

@@ -1,7 +1,6 @@
 import CheckBoxFilter from "../components/common/CheckBoxFilter";
-import ProductCard from "../components/ProductCard";
-// import FilterToggleClient from "./FilterToggleClient";
 import FilterToggleClientMobile from "../components/FIlterToggleClientMobile";
+import ProductCard from "../components/ProductCard";
 
 const filterValues = [
   "Basic & Solid Tees",
@@ -252,28 +251,22 @@ const collection = [
   },
 ];
 
-// type PageProps = {
-//   searchParams: { [key: string]: string };
-// };
 type ShirtsPageProps = {
-  searchParams: {
+  searchParams: Promise<{
     type?: string | undefined;
-  };
+  }>;
 };
 
 const ShirtsPage = async ({ searchParams }: ShirtsPageProps) => {
-  const selectedType = searchParams?.type || "";
-  // const selectedType = (await searchParams).type || "";
+  const { type } = await searchParams;
 
   let filteredCollection = collection;
 
-  if (selectedType) {
-    filteredCollection = collection.filter(
-      (item) => item.type === selectedType
-    );
+  if (type) {
+    filteredCollection = collection.filter((item) => item.type === type);
   }
 
-  console.log("Selected Type: ", selectedType);
+  console.log("Selected Type: ", type);
   return (
     <div className="w-full px-3 md:px-5">
       <div className="flex w-full h-10 mb-4">
@@ -284,7 +277,7 @@ const ShirtsPage = async ({ searchParams }: ShirtsPageProps) => {
           <FilterToggleClientMobile filterValues={filterValues} />
         </div>
         <h1 className="lg:text-lg font-bold p-2 text-emerald-900 w-5/6">
-          {selectedType}
+          {type}
         </h1>
       </div>
 
@@ -296,7 +289,7 @@ const ShirtsPage = async ({ searchParams }: ShirtsPageProps) => {
         </div>
 
         <div className="w-full md:w-5/6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-around mb-12">
-          {filteredCollection.map((item) => (
+          {filteredCollection.map((item, index) => (
             <ProductCard
               key={item.id}
               href={`/shirts/${item.id}`}
@@ -306,6 +299,7 @@ const ShirtsPage = async ({ searchParams }: ShirtsPageProps) => {
               subTitle={item.detail}
               color={item.color}
               availStock={item.stock}
+              priority={index === 0}
             />
           ))}
         </div>
