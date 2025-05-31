@@ -19,11 +19,11 @@ const Footer = () => {
   ];
   const contactLinks = [
     {
-      label: "Block/2, K.A.E.C.H.S, Dr Israr Ahmed Road, Karachi, Pakistan",
+      label: "123 Main Street, Suite 400 Springfield, IL 62704 United States",
       icon: LuMapPin,
     },
-    { label: "+92 21 1234567", icon: LuPhone },
-    { label: "info@gravitee.pk", icon: LuMail },
+    { label: "+code 1234567890", icon: LuPhone },
+    { label: "contact@example.com", icon: LuMail },
   ];
   return (
     <footer className="border-t bg-slate-50 flex justify-center">
@@ -35,7 +35,7 @@ const Footer = () => {
               <span className="text-xl italic font-bold">Gravitee</span>
             </div>
             <p className="text-sm text-zinc-500">
-              Pakistan&apos;s premier shirt manufacturer since 2015. Quality,
+              One of the premier shirt manufacturer since 2015. Quality,
               craftsmanship and pride in every stitch.
             </p>
           </div>

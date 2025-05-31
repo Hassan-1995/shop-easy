@@ -59,7 +59,7 @@ const MainSection = () => {
   return (
     <div className="px-3 md:px-10">
       <Header title="COLLECTION" />
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 my-12">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 gap-y-16">
         {collection.map((item) => (
           <ImageContent
             key={item.category}

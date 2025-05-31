@@ -40,7 +40,7 @@ const HeroSection = () => {
           <LuChevronDown className="text-5xl lg:text-6xl  text-white animate-bounce " />
         </div>
       </div>
-      <div className="w-[140px] h-[70px] md:w-[200px] md:h-[100px] bg-emerald-900 rounded-b-full mx-auto -mt-[30vh] flex items-end justify-center">
+      <div className="relative w-[140px] h-[70px] md:w-[200px] md:h-[100px] bg-emerald-900 rounded-b-full mx-auto -mt-[30vh] flex items-end justify-center">
         <LuChevronDown className="text-5xl lg:text-6xl text-white animate-bounce " />
       </div>
     </div>

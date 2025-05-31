@@ -39,10 +39,10 @@ const CartItems = () => {
           }`}
         />
         <div
-          className={`absolute -right-6 top-1/2 -translate-y-1/2 w-12 h-12 flex justify-center items-center rounded-full text-2xl shadow transition-all duration-700 ${
+          className={`absolute -right-0 top-1/2 -translate-y-1/2 w-12 h-12 flex justify-center items-center rounded-full text-2xl shadow transition-all duration-700 ${
             totalItems >= 3
               ? "bg-emerald-600 text-white"
-              : "bg-zinc-200 text-emerald-600"
+              : "bg-zinc-200 text-emerald-700"
           }`}
         >
           <FaTruckFast />

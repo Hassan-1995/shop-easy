@@ -11,7 +11,7 @@ const CartPage = () => {
           Thank You For Trusting Us{" "}
         </p>
       </section>
-      <section className="max-w-4xl mx-auto ">
+      <section className="lg:max-w-4xl mx-auto md:px-10 ">
         <h1 className="text-2xl font-semibold mb-6">Your Cart</h1>
         <CartItems />
       </section>
