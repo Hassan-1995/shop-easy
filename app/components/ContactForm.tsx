@@ -19,7 +19,7 @@ const ContactForm = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log(formData); // Replace with actual submission logic
+    console.log(formData); 
     setSubmitted(true);
     setFormData({ name: "", email: "", message: "" });
   };
